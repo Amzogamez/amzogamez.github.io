@@ -629,6 +629,20 @@ body{background:var(--bg);font-family:system-ui,-apple-system,'Segoe UI',sans-se
     }
     #game-dialog .game-back:hover{transform:translate(-1px,-1px);background:#31518f !important}
 
+
+    /* Remove border for hero green button */
+    .hero-copy .btn-primary,
+    .action-row .btn-primary{
+      border:none !important;
+      border-color:transparent !important;
+      box-shadow:0 8px 18px rgba(44,197,111,.28) !important;
+    }
+    .hero-copy .btn-primary:hover,
+    .action-row .btn-primary:hover{
+      border:none !important;
+      border-color:transparent !important;
+      box-shadow:0 10px 22px rgba(44,197,111,.32) !important;
+    }
 </style>
 </head>
 <body>
@@ -691,10 +705,6 @@ body{background:var(--bg);font-family:system-ui,-apple-system,'Segoe UI',sans-se
           <h1>Hai, saya <span class="gradient-text">Amsyar Firas.</span></h1>
           <div class="hero-role"><span class="role-line"></span><span>Future IT Specialist</span><span class="role-sep">/</span><span>Creative Gamer</span></div>
           <p class="hero-lead">Saya minat teknologi, design dan permainan. Di sini saya kongsikan hasil kreatif, projek web yang sedang saya tambah baik dan perjalanan untuk mencapai impian dalam bidang IT.</p>
-          <div class="action-row">
-            <a class="btn btn-primary" href="#design">Teroka Karya Saya <svg><use href="#ic-arrow"/></svg></a>
-            <button class="btn btn-secondary" id="hero-launch-tank" type="button"><svg><use href="#ic-game"/></svg> Main Tank Survival</button>
-          </div>
           <div class="hero-facts">
             <div class="hero-fact"><span class="fact-icon"><svg><use href="#ic-laptop"/></svg></span><span><strong>IT &amp; Web</strong><small>Dalam pembelajaran</small></span></div>
             <div class="hero-fact"><span class="fact-icon"><svg><use href="#ic-palette"/></svg></span><span><strong>3 Poster</strong><small>Karya kreatif</small></span></div>
@@ -892,6 +902,9 @@ body{background:radial-gradient(ellipse at 50% -10%,#24314c 0%,transparent 44%),
 body{background:#101d37;background-image:linear-gradient(#ffffff09 1px,transparent 1px),linear-gradient(90deg,#ffffff09 1px,transparent 1px);background-size:16px 16px;color:#eef5ff;font:14px/1.55 system-ui,sans-serif}h1{font-family:AFArcade,monospace;font-weight:400;letter-spacing:1px;font-size:clamp(24px,3.5vw,36px);color:#ffdf84;background:none;text-shadow:3px 3px #080d1a}p{font-size:13px;line-height:1.6;color:#bfcee5}.tagline{font:13px/1.5 system-ui,sans-serif;color:#b7c9e4}.hud div,.skillbar div,.sideMenu button,.arena,.overlay #start,.shop,.extraPanel,.profileHero,.profileStat,.profileSection,#profilePanel #achievementList article,.robotBubble,.adminBox,button,select,input,.timerTrack,.timerTrack i,.profileProgress,.profileProgress i{border-radius:0!important}.hud div,.skillbar div{background:#192b4a;border:2px solid #4c6d9b;box-shadow:3px 3px #080f20}.hud small{font:10px/1.4 AFArcade,monospace;color:#b8d6fa}.hud span{font-size:22px}.arena{border:3px solid #6489ba;box-shadow:4px 4px #080f20}.sideMenu button,button,select{font:700 13px/1.4 system-ui,sans-serif;background:#203a61;border:2px solid #5679a8;color:#f5f8ff;box-shadow:3px 3px #080f20}.sideMenu button:hover,button:hover:not(:disabled){background:#2c4d7a;border-color:#90c9ff}.overlay{background:#0b1529d9;backdrop-filter:none}.overlay h2,.shop h2,.profileHead h2,.adminBox h2{font:400 24px/1.4 AFArcade,monospace;color:#ffdf84}.overlay #start,button.primary{background:#ffdf84;color:#19243a;border:2px solid #bb8d37;box-shadow:4px 4px #080f20;font:400 13px/1.6 AFArcade,monospace;text-transform:uppercase}.shop,.extraPanel,.adminBox{background:#172744;border:2px solid #5679a8}.shop,.extraPanel{box-shadow:0 0 0 100vmax #000b,5px 5px #080f20}.skinCard,.profileSection,.profileStat{background:#1b2f4f}.secretAdmin{background:transparent;box-shadow:none;border:0}.screenTools button{font-size:12px}.controls button{font-size:20px}.skillbar span{font-size:13px}.overlay #message:not([hidden]){font-size:13px}.robotBubble h3{font-size:17px}.robotArt{animation:botFloat 2s steps(4,end) infinite}@media(max-width:600px){.hud small{font-size:8px;letter-spacing:0}.hud span{font-size:16px}.sideMenu button{font-size:11px}.overlay #start{font-size:11px;padding:12px}.overlay h2{font-size:18px}.overlay p,.overlay #message:not([hidden]){font-size:11px}.tagline{font-size:11px}.shop h2,.profileHead h2{font-size:20px}}@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 
 #adminBtn{min-width:44px;min-height:44px;touch-action:manipulation;color:#a5c5ff}#adminBtn.adminActive{color:#ffe27a}
+
+/* Independent multi-touch controls */
+#afJoystick,#afJoystick *,#touchDash,#touchErase,.touch-skills {touch-action:none;-webkit-user-select:none;user-select:none;-webkit-touch-callout:none;}
 &lt;/style&gt;&lt;style&gt;.af-touch{display:none;align-items:center;justify-content:center;gap:16px;margin:12px auto}.af-touch .controls{margin:0;grid-template-columns:repeat(3,48px);grid-template-rows:repeat(2,42px)}.af-touch button{touch-action:none}.af-touch #touchErase{min-height:52px;padding:8px 13px}.af-touch #touchErase small{display:block;font-size:10px}@media(max-width:800px),(pointer:coarse){.af-touch{display:flex} main{padding-top:10px}.hud{gap:4px}.hud div{padding:5px;min-width:45px}.hud small{font-size:9px;letter-spacing:.5px}.tagline{font-size:11px}.skillbar{margin-top:8px}}&lt;/style&gt;&lt;style&gt;
 /* Full-window portfolio game layout. Keep the original 640 × 440 arena ratio. */
 body{min-height:100dvh;overflow-x:hidden}
@@ -1051,13 +1064,31 @@ homeCheckpoint();applyMusic();renderShop();requestAnimationFrame(loop);
 window.afGamePause=function(){resetJoystick();if(mode===&#x27;playing&#x27;)toggle();keys.clear();if(hasSave)save();};
 window.afGameAudio=function(enabled){portfolioAudio=Boolean(enabled);};
 for(const b of document.querySelectorAll(&#x27;[data-key]&#x27;)){b.addEventListener(&#x27;pointerdown&#x27;,()=&gt;{if(mode!==&#x27;playing&#x27;)return;const k=b.dataset.key,n=performance.now();if(taps[k]!==undefined&amp;&amp;n-taps[k]&lt;=300){dash([&#x27;ArrowUp&#x27;,&#x27;ArrowRight&#x27;,&#x27;ArrowDown&#x27;,&#x27;ArrowLeft&#x27;].indexOf(k));delete taps[k]}else taps[k]=n;});}
-$(&#x27;touchErase&#x27;).addEventListener(&#x27;click&#x27;,erase);
+
 window.addEventListener(&#x27;keydown&#x27;,e=&gt;{if(e.key===&#x27;Escape&#x27;&amp;&amp;$(&#x27;shop&#x27;).hidden&amp;&amp;$(&#x27;profilePanel&#x27;).hidden&amp;&amp;$(&#x27;adminDialog&#x27;).hidden){/* Escape pauses the game; the outer close button returns to the portfolio. */ if(mode===&#x27;playing&#x27;)toggle();}});
 
 function resetJoystick(){const j=$(&#x27;afJoystick&#x27;),k=$(&#x27;afJoyKnob&#x27;);const p=joyPointer;joyPointer=null;joyX=joyY=0;if(j){j.classList.remove(&#x27;active&#x27;);if(p!==null&amp;&amp;j.hasPointerCapture(p)){try{j.releasePointerCapture(p)}catch{}}}if(k)k.style.transform=&#x27;translate(-50%,-50%)&#x27;}
 function readJoystick(e){const j=$(&#x27;afJoystick&#x27;),r=j.getBoundingClientRect(),limit=(r.width-52)/2;let dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2;let distance=Math.hypot(dx,dy),mag=Math.min(1,distance/Math.max(15,limit));if(mag&lt;.13){joyX=joyY=0}else{joyX=dx/distance*mag;joyY=dy/distance*mag;joyFacing=Math.abs(dx)&gt;Math.abs(dy)?(dx&gt;0?1:3):(dy&gt;0?2:0)}let ratio=distance?Math.min(1,Math.max(15,limit)/distance):0;$(&#x27;afJoyKnob&#x27;).style.transform=`translate(-50%,-50%) translate(${dx*ratio}px,${dy*ratio}px)`}
 const joystick=$(&#x27;afJoystick&#x27;);joystick.addEventListener(&#x27;pointerdown&#x27;,e=&gt;{if(mode!==&#x27;playing&#x27;||joyPointer!==null)return;e.preventDefault();joyPointer=e.pointerId;joystick.setPointerCapture(e.pointerId);joystick.classList.add(&#x27;active&#x27;);readJoystick(e)});joystick.addEventListener(&#x27;pointermove&#x27;,e=&gt;{if(e.pointerId===joyPointer){e.preventDefault();readJoystick(e)}});for(const event of [&#x27;pointerup&#x27;,&#x27;pointercancel&#x27;,&#x27;lostpointercapture&#x27;])joystick.addEventListener(event,e=&gt;{if(e.pointerId===joyPointer)resetJoystick()});window.addEventListener(&#x27;blur&#x27;,resetJoystick);document.addEventListener(&#x27;visibilitychange&#x27;,()=&gt;{if(document.hidden)resetJoystick()});
-$(&#x27;touchDash&#x27;).addEventListener(&#x27;click&#x27;,()=&gt;{if(mode!==&#x27;playing&#x27;)return;const length=Math.hypot(joyX,joyY);dash(length&gt;.01?joyFacing:player.d,length&gt;.01?[joyX/length,joyY/length]:null)});
+// Each skill responds directly to its own finger, including non-primary touch pointers.
+// Do not release or reset the movement joystick when a skill finger is lifted.
+function bindTouchSkill(id, action){
+  const button=$(id); let lastPointer=-Infinity;
+  button.addEventListener(&#x27;pointerdown&#x27;,e=&gt;{
+    if(e.button!==0||button.disabled)return;
+    e.preventDefault();
+    lastPointer=performance.now();
+    action();
+    refreshTouchSkills();
+  });
+  // Retain keyboard/assistive-technology activation, without duplicating pointer actions.
+  button.addEventListener(&#x27;click&#x27;,e=&gt;{
+    if(button.disabled||e.detail!==0||performance.now()-lastPointer&lt;500)return;
+    action(); refreshTouchSkills();
+  });
+}
+bindTouchSkill(&#x27;touchDash&#x27;,()=&gt;{if(mode!==&#x27;playing&#x27;)return;const length=Math.hypot(joyX,joyY);dash(length&gt;.01?joyFacing:player.d,length&gt;.01?[joyX/length,joyY/length]:null)});
+bindTouchSkill(&#x27;touchErase&#x27;,erase);
 function refreshTouchSkills(){const d=$(&#x27;touchDash&#x27;),e=$(&#x27;touchErase&#x27;),canDash=unlocked(&#x27;dash&#x27;),canErase=unlocked(&#x27;erase&#x27;);d.disabled=mode!==&#x27;playing&#x27;||!canDash||dashTime&gt;0||dashCharges&lt;=0;e.disabled=mode!==&#x27;playing&#x27;||!canErase||eraseCD&gt;0;$(&#x27;touchDashState&#x27;).textContent=!canDash?&#x27;Unlock at Stage 5&#x27;:dashCharges&lt;=0?dashCD.toFixed(1)+&#x27;s&#x27;:upgrades.dash===9?&#x27;Unlimited&#x27;:&#x27;Ready · &#x27;+dashCharges;$(&#x27;touchEraseState&#x27;).textContent=!canErase?&#x27;Buy in Shop&#x27;:eraseCD&gt;0?eraseCD.toFixed(1)+&#x27;s&#x27;:&#x27;Ready&#x27;;}
 refreshTouchSkills();
 &lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
@@ -1332,7 +1363,6 @@ refreshTouchSkills();
 
   function syncTankSound(){try{$('#tank-frame').contentWindow.afGameAudio?.(soundEnabled);}catch(e){}}
   $('#tank-frame').addEventListener('load',syncTankSound);
-  $('#hero-launch-tank').addEventListener('click',()=>openDialog('game-dialog'));
   window.addEventListener('pagehide',()=>{try{$('#tank-frame').contentWindow.afGamePause?.();}catch(e){}});
   syncTankSound();
 
