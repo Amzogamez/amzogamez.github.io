@@ -1285,14 +1285,25 @@ refreshTouchSkills();
 
 /* AF Pixel World LOCAL leaderboard. No external API or fake world rankings. */
 const AF_LB_KEY=&#x27;afTankLeaderboardV1&#x27;;
+const AF_LB_SEED=[{mode:&#x27;normal&#x27;,name:&#x27;Aqil (first player)&#x27;,stage:101,date:&#x27;2026-11-21&#x27;},{mode:&#x27;rush&#x27;,name:&#x27;Aqil (first player)&#x27;,stage:100,date:&#x27;2026-11-21&#x27;}];
 let afLbMode=&#x27;normal&#x27;,afLbMemory=[];
+function afLeaderboardSeedMerge(rows){
+ const merged=(Array.isArray(rows)?rows.slice():[]).filter(v=&gt;v&amp;&amp;[&#x27;normal&#x27;,&#x27;rush&#x27;].includes(v.mode)&amp;&amp;Number.isInteger(v.stage)&amp;&amp;v.stage&gt;=1&amp;&amp;v.stage&lt;=100000&amp;&amp;typeof v.name===&#x27;string&#x27;).map(v=&gt;({mode:v.mode,name:v.name.slice(0,24),stage:v.stage,date:typeof v.date===&#x27;string&#x27;?v.date.slice(0,10):&#x27;&#x27;}));
+ for(const seed of AF_LB_SEED){
+  const existing=merged.find(r=&gt;r.mode===seed.mode&amp;&amp;r.name.toLocaleLowerCase()===seed.name.toLocaleLowerCase());
+  if(!existing){merged.push({...seed})}
+  else if(existing.stage&lt;seed.stage){existing.stage=seed.stage;existing.date=seed.date}
+ }
+ return [&#x27;normal&#x27;,&#x27;rush&#x27;].flatMap(m=&gt;merged.filter(r=&gt;r.mode===m).sort((a,b)=&gt;b.stage-a.stage||a.date.localeCompare(b.date)||a.name.localeCompare(b.name)).slice(0,10));
+}
 function afLeaderboardRead(){
  try{const data=JSON.parse(localStorage.getItem(AF_LB_KEY)||&#x27;[]&#x27;);
-  if(Array.isArray(data))return data.filter(v=&gt;v&amp;&amp;[&#x27;normal&#x27;,&#x27;rush&#x27;].includes(v.mode)&amp;&amp;Number.isInteger(v.stage)&amp;&amp;v.stage&gt;=1&amp;&amp;v.stage&lt;=100000&amp;&amp;typeof v.name===&#x27;string&#x27;).map(v=&gt;({mode:v.mode,name:v.name.slice(0,24),stage:v.stage,date:typeof v.date===&#x27;string&#x27;?v.date.slice(0,10):&#x27;&#x27;}));
+  if(Array.isArray(data))return afLeaderboardSeedMerge(data);
  }catch{}
- return afLbMemory.slice();
+ return afLeaderboardSeedMerge(afLbMemory.slice());
 }
 function afLeaderboardWrite(rows){
+ rows=afLeaderboardSeedMerge(rows);
  afLbMemory=rows.slice();
  try{localStorage.setItem(AF_LB_KEY,JSON.stringify(rows))}catch{$(&#x27;leaderboardInfo&#x27;).textContent=&#x27;Browser tidak benarkan storan. Ranking hanya kekal sepanjang sesi ini.&#x27;}
 }
