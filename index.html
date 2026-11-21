@@ -40,7 +40,7 @@
       --hero-grad:linear-gradient(130deg,#192d54 0%,#1b2a4e 45%,#30254d 100%);
     }
     *{box-sizing:border-box}
-    html{scroll-behavior:smooth;scroll-padding-top:105px}
+    html{scroll-behavior:smooth;scroll-padding-top:16px}
     body{margin:0;font-family:Inter,"Segoe UI",system-ui,-apple-system,BlinkMacSystemFont,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
     body.modal-open{overflow:hidden}
     button,a{font:inherit}
@@ -51,7 +51,7 @@
     svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round;flex:none}
     .sr-only{position:absolute;width:1px;height:1px;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap}
     .container{width:min(1160px,calc(100% - 48px));margin-inline:auto}
-    .site-header{height:84px;position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(193,210,239,.33);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
+    .site-header{height:84px;position:relative;z-index:50;border-bottom:1px solid rgba(193,210,239,.33);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px)}
     .header-inner{height:100%;display:flex;align-items:center;gap:24px}
     .brand{display:inline-flex;align-items:center;gap:12px;flex:none;min-width:0}
     .brand-mark{display:grid;place-items:center;position:relative;width:48px;height:48px;flex:none;border-radius:15px;color:#fff;background:linear-gradient(135deg,#3979fc,#685df1);box-shadow:0 8px 18px rgba(55,111,243,.24);font-weight:900;font-size:16px;letter-spacing:-1px;overflow:hidden}
